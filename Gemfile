@@ -20,3 +20,7 @@ group :development do
   gem 'pry-rails'
   gem 'spring'
 end
+
+group :test do
+  gem 'capybara'
+end
