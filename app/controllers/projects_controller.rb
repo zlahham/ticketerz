@@ -1,7 +1,6 @@
 class ProjectsController < ApplicationController
 
   def index
-
   end
 
   def new
@@ -10,13 +9,16 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.new(project_params)
-
     if @project.save
       flash[:notice] = "Project has been successfully created"
       redirect_to @project
     else
       # nothing yet
     end
+  end
+
+  def show
+    @project = Project.find(params[:id])
   end
 
   private
