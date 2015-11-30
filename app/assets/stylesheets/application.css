@@ -14,9 +14,9 @@
  *= require_self
  */
 
-body {
+/*body {
   font-family: lato;
-}
+}*/
 p #project_name {
   display: block;
   margin-top: 0.5em;
