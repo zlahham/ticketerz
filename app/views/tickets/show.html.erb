@@ -1,6 +1,7 @@
 <div id="ticket">
   <header>
-    <h1><%= @project.name %></h1>
+
+    <h1><%= link_to @project.name, project_path(@project)%></h1>
   </header>
 
   <header>
