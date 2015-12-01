@@ -8,12 +8,22 @@
   </ul>
   <p><%= @project.description %></p>
 </header>
+
 <header>
   <h2>Tickets</h2>
   <ul class="actions">
     <li><%= link_to "New Ticket", new_project_ticket_path(@project), class: 'new'%></li>
   </ul>
 </header>
+
+<ul id="tickets">
+  <%= @project.tickets.each do |tick|%>
+  <li>
+    <%= tick.id %>
+    <%= link_to tick.name, [@project, tick] %>
+  </li>
+  <% end %>
+</ul>
 
 
 <p><%= link_to "Back", projects_path%></p>
