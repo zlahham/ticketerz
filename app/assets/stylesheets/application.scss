@@ -27,7 +27,7 @@ form {
 ul.actions {
   @extend .list-unstyled;
   @extend .list-inline;
-  
+
 }
 a.new, a.edit, a.delete {
   @extend .btn;
@@ -60,6 +60,10 @@ a.delete {
   &:before {
     @extend .fa-trash;
   }
+}
+
+a.navbar-brand {
+  font-family: consolas;
 }
 
 .alert-notice {
