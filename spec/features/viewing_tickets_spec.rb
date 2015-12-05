@@ -1,11 +1,13 @@
 require 'rails_helper'
 
 RSpec.feature 'Users can view the tickets' do
+
   before do
+    author = FactoryGirl.create(:user)
     atom = FactoryGirl.create(:project, name: 'Atom 2')
-    FactoryGirl.create(:ticket, project: atom, name: 'Make it cool', description: 'please add animations!!' )
+    FactoryGirl.create(:ticket, project: atom, author: author, name: 'Make it cool', description: 'please add animations!!' )
     vim = FactoryGirl.create(:project, name: 'vim')
-    FactoryGirl.create(:ticket, project: vim, name: 'Make it fun', description: 'Emojis and more!' )
+    FactoryGirl.create(:ticket, project: vim, author: author, name: 'Make it fun', description: 'Emojis and more!' )
     visit root_path
   end
 
