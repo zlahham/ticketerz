@@ -15,3 +15,19 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require_tree .
+
+$(function() {
+  var flashCallback;
+
+  flashCallback = function() {
+    return $(".alert").slideUp(900);
+  };
+
+  $(".alert").bind('click', (function(_this) {
+    return function(ev) {
+      return $(".alert").slideUp(900);
+    };
+  })(this));
+
+  return setTimeout(flashCallback, 3000);
+});
