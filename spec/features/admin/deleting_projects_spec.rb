@@ -1,6 +1,10 @@
 require "rails_helper"
 
 RSpec.feature 'Users can delete projects' do
+  before do
+    login_as(FactoryGirl.create(:user, :admin))
+  end
+
   scenario 'with flying colours' do
     FactoryGirl.create(:project, name: 'Atom')
     visit root_path
