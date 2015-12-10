@@ -41,7 +41,11 @@
           <% if user_signed_in? %>
             <div class="navbar-right">
               <p class="navbar-text">
-                Signed in as <%= current_user.email  %>
+                <% if current_user.admin? %>
+                  Signed in as <%= current_user.email %> (Admin)
+                <% else %>
+                  Signed in as <%= current_user.email %>
+                <% end %>
               </p>
               <ul class="nav navbar-nav">
                 <li>
