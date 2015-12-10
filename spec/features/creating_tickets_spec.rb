@@ -1,11 +1,11 @@
 require "rails_helper"
 
-RSpec.feature 'Users can create a new ticket' do
-  let(:user) { FactoryGirl.create(:user) }
+feature 'Users can create a new ticket' do
+  let(:user) { create(:user) }
 
   before do
     login_as(user)
-    project = FactoryGirl.create(:project, name: 'Chrome')
+    project = create(:project, name: 'Chrome')
     visit project_path(project)
     click_link 'New Ticket'
   end

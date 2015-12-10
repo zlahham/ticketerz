@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-RSpec.feature 'Users can only see the apropriate links' do
-  let(:project) { FactoryGirl.create(:project) }
-  let(:user) { FactoryGirl.create(:user) }
-  let(:admin) { FactoryGirl.create(:user, :admin) }
+feature 'Users can only see the apropriate links' do
+  let(:project) { create(:project) }
+  let(:user) { create(:user) }
+  let(:admin) { create(:user, :admin) }
 
   context 'anonymous user' do
     scenario 'cannot see the New Project link' do

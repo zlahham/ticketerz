@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-RSpec.feature 'Users can view all projects' do
+feature 'Users can view all projects' do
   scenario 'with the project details' do
-    project = FactoryGirl.create(:project, name: 'Atom')
+    project = create(:project, name: 'Atom')
 
     visit root_path
     click_link 'Atom'

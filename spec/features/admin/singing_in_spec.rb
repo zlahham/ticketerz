@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-RSpec.feature 'Admins that are signed up can sign in' do
-  let(:admin) { FactoryGirl.create(:user, :admin) }
+feature 'Admins that are signed up can sign in' do
+  let(:admin) { create(:user, :admin) }
 
   before { login_as admin }
 

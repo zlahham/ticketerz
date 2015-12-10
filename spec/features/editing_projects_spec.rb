@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-RSpec.feature 'Users can edit projects' do
+feature 'Users can edit projects' do
   before do
-    FactoryGirl.create(:project, name: 'Atom')
+    create(:project, name: 'Atom')
     visit root_path
     click_link 'Atom'
     click_link 'Edit Project'

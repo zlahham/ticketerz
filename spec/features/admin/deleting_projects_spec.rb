@@ -1,12 +1,12 @@
 require "rails_helper"
 
-RSpec.feature 'Users can delete projects' do
+feature 'Admins can delete projects' do
   before do
-    login_as(FactoryGirl.create(:user, :admin))
+    login_as( create(:user, :admin) )
   end
 
-  scenario 'with flying colours' do
-    FactoryGirl.create(:project, name: 'Atom')
+  scenario 'with success' do
+    create(:project, name: 'Atom')
     visit root_path
     click_link 'Atom'
     click_link 'Delete Project'

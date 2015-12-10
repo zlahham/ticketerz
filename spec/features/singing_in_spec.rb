@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-RSpec.feature 'Users that are signed up can sign in' do
-  let(:user) { FactoryGirl.create(:user) }
+feature 'Users that are signed up can sign in' do
+  let(:user) { create(:user) }
 
   scenario 'when providing valid details' do
     visit root_path
