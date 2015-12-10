@@ -40,13 +40,7 @@
           </ul>
           <% if user_signed_in? %>
             <div class="navbar-right">
-              <p class="navbar-text">
-                <% if current_user.admin? %>
-                  Signed in as <%= current_user.email %> (Admin)
-                <% else %>
-                  Signed in as <%= current_user.email %>
-                <% end %>
-              </p>
+              <p class="navbar-text"> <%= admin_status %> </p>
               <ul class="nav navbar-nav">
                 <li>
                   <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
