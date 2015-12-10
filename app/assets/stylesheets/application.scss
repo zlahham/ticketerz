@@ -72,12 +72,16 @@ a.navbar-brand {
   @extend .alert-success;
 
   border: solid 1.5px #26722D;
-  background-color: #A4E7A0;
+  background-color: #5CB85C;
+  color: #fff;
+  font-weight: bold;
 }
 
 .alert-alert {
   @extend .alert-danger;
 
   border: solid 1.5px #900;
-  background-color: #FF6565;
+  background-color: #D9534F;
+  color: #fff;
+  font-weight: bold;
 }
