@@ -65,7 +65,7 @@ a.delete {
 }
 
 a.navbar-brand {
-  font-family: consolas;
+  font-family: inconsolata;
 }
 
 .alert-notice {
@@ -84,4 +84,8 @@ a.navbar-brand {
   background-color: #D9534F;
   color: #fff;
   font-weight: bold;
+}
+
+.navbar-default {
+  background-color: #47b8e0;
 }
