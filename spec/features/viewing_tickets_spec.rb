@@ -1,15 +1,14 @@
 require 'rails_helper'
 
 feature 'Users can view the tickets' do
-
   before do
     author = create(:user)
 
     atom = create(:project, name: 'Atom 2')
-    create(:ticket, project: atom, author: author, name: 'Make it cool', description: 'please add animations!!' )
+    create(:ticket, project: atom, author: author, name: 'Make it cool', description: 'please add animations!!')
 
     vim = create(:project, name: 'vim')
-    create(:ticket, project: vim, author: author, name: 'Make it fun', description: 'Emojis and more!' )
+    create(:ticket, project: vim, author: author, name: 'Make it fun', description: 'Emojis and more!')
 
     visit root_path
   end
@@ -26,6 +25,5 @@ feature 'Users can view the tickets' do
     end
 
     expect(page).to have_content 'please add animations!!'
-
   end
 end
