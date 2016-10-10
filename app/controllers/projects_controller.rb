@@ -13,10 +13,10 @@ class ProjectsController < ApplicationController
 
   def update
     if @project.update(project_params)
-      flash[:notice] = "Project has been updated."
+      flash[:notice] = 'Project has been updated.'
       redirect_to @project
     else
-      flash.now[:alert] = "Project has not been updated."
+      flash.now[:alert] = 'Project has not been updated.'
       render 'edit'
     end
   end
@@ -30,7 +30,7 @@ class ProjectsController < ApplicationController
   def set_project
     @project = Project.find(params[:id])
   rescue ActiveRecord::RecordNotFound
-    flash[:alert] = "The project that you were looking for could not be found."
+    flash[:alert] = 'The project that you were looking for could not be found.'
     redirect_to projects_path
   end
 end
