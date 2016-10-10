@@ -13,6 +13,7 @@ gem 'bootstrap-sass'
 gem 'font-awesome-rails'
 gem 'simple_form'
 gem 'devise'
+gem 'json'
 
 group :development, :test do
   gem 'byebug'
@@ -24,6 +25,9 @@ group :development do
   gem 'web-console', '~> 2.0'
   gem 'pry-rails'
   gem 'spring'
+  gem 'guard'
+  gem 'guard-rubocop'
+  gem 'guard-rspec', require: false
 end
 
 group :test do
