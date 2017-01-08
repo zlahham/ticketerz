@@ -16,5 +16,4 @@ describe Admin::ApplicationController, type: :controller do
       expect(flash[:alert]).to eq 'You must be an admin to do that.'
     end
   end
-
 end

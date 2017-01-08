@@ -31,5 +31,4 @@ feature 'Admins can create' do
       expect(page).to have_content 'admin@example.com (Admin)'
     end
   end
-
 end

@@ -1,9 +1,8 @@
 require 'rails_helper'
 
 feature 'Admins can create new projects' do
-
   before do
-    login_as( create(:user, :admin) )
+    login_as(create(:user, :admin))
     visit root_path
     click_link 'New Project'
   end

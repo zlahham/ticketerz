@@ -1,8 +1,8 @@
-require "rails_helper"
+require 'rails_helper'
 
 feature 'Admins can delete projects' do
   before do
-    login_as( create(:user, :admin) )
+    login_as(create(:user, :admin))
   end
 
   scenario 'with success' do

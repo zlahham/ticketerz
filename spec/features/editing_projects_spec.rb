@@ -16,7 +16,7 @@ feature 'Users can edit projects' do
   end
 
   scenario 'but not with invalid attributes' do
-    fill_in "Name", with: ""
+    fill_in 'Name', with: ''
     click_button 'Update Project'
     expect(page).to have_content 'Project has not been updated.'
   end
