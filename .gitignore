@@ -27,6 +27,6 @@ config/initializers/secret_token.rb
 config/secrets.yml
 /.bundle
 /vendor/bundle
-Gemfile.lock, .ruby-version, .ruby-gemset
+Gemfile.lock
 .rvmrc
 .byebug_history
