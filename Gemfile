@@ -1,33 +1,34 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.2.4'
-gem 'pg'
-gem 'sass-rails', '~> 5.0'
-gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.1.0'
-gem 'jquery-rails'
-gem 'turbolinks'
-gem 'jbuilder', '~> 2.0'
-gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bootstrap-sass'
-gem 'font-awesome-rails'
-gem 'simple_form'
+gem 'coffee-rails', '~> 4.1.0'
 gem 'devise'
+gem 'font-awesome-rails'
+gem 'jbuilder', '~> 2.0'
+gem 'jquery-rails'
 gem 'json'
+gem 'pg'
+gem 'rails', '4.2.4'
+gem 'sass-rails', '~> 5.0'
+gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'simple_form'
+gem 'turbolinks'
+gem 'uglifier', '>= 1.3.0'
 
 group :development, :test do
+  gem 'awesome_print'
   gem 'byebug'
   gem 'rspec-rails'
-  gem 'awesome_print'
 end
 
 group :development do
-  gem 'web-console', '~> 2.0'
+  gem 'guard'
+  gem 'guard-rspec', require: false
+  gem 'guard-rubocop'
+  gem 'meta_request'
   gem 'pry-rails'
   gem 'spring'
-  gem 'guard'
-  gem 'guard-rubocop'
-  gem 'guard-rspec', require: false
+  gem 'web-console', '~> 2.0'
 end
 
 group :test do
