@@ -1,12 +1,12 @@
 require 'rails_helper'
 
-feature 'Users can edit projects' do
+feature 'Managers can edit projects' do
   let(:user)    { create(:user) }
   let(:project) { create(:project) }
 
   before do
     login_as(user)
-    assign_role!(user, :viewer, project)
+    assign_role!(user, :manager, project)
     visit root_path
     click_link 'Atom'
     click_link 'Edit Project'
