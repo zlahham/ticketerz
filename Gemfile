@@ -8,6 +8,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
 gem 'json'
 gem 'pg'
+gem 'pundit', '~> 1.1'
 gem 'rails', '4.2.4'
 gem 'sass-rails', '~> 5.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
@@ -17,7 +18,8 @@ gem 'uglifier', '>= 1.3.0'
 
 group :development, :test do
   gem 'awesome_print'
-  gem 'byebug'
+  gem 'pry-byebug'
+  gem 'pry-rails'
   gem 'rspec-rails'
 end
 
@@ -28,7 +30,6 @@ group :development do
   gem 'guard-rspec', require: false
   gem 'guard-rubocop'
   gem 'meta_request'
-  gem 'pry-rails'
   gem 'spring'
   gem 'web-console', '~> 2.0'
 end

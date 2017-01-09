@@ -10,10 +10,12 @@ feature 'Users can view the tickets' do
     vim = create(:project, name: 'vim')
     create(:ticket, project: vim, author: author, name: 'Make it fun', description: 'Emojis and more!')
 
-    visit root_path
+    login_as(author)
+    assign_role!(author, :viewer, atom)
   end
 
   scenario 'for a certain project' do
+    visit root_path
     click_link 'Atom'
     expect(page).to have_content 'Make it cool'
     expect(page).not_to have_content 'Make it fun'

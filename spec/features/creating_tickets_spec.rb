@@ -1,11 +1,12 @@
 require 'rails_helper'
 
 feature 'Users can create a new ticket' do
-  let(:user) { create(:user) }
+  let(:user)    { create(:user) }
+  let(:project) { create(:project, name: 'Chrome') }
 
   before do
     login_as(user)
-    project = create(:project, name: 'Chrome')
+    assign_role!(user, :viewer, project)
     visit project_path(project)
     click_link 'New Ticket'
   end

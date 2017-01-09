@@ -6,8 +6,8 @@ module ApplicationHelper
     end
   end
 
-  def admins_only(&block)
-    block.call if current_user.try(:admin?)
+  def admins_only
+    yield if current_user.try(:admin?)
   end
 
   def admin_status

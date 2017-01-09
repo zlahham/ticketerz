@@ -1,11 +1,15 @@
 require 'rails_helper'
 
 feature 'Users can delete their tickets' do
-  let(:author) { create(:user) }
+  let(:author)  { create(:user) }
   let(:project) { create(:project) }
-  let(:ticket) { create(:ticket, project: project, author: author) }
+  let(:ticket)  { create(:ticket, project: project, author: author) }
 
-  before { visit project_ticket_path(project, ticket) }
+  before do
+    login_as(author)
+    assign_role!(author, :viewer, project)
+    visit project_ticket_path(project, ticket)
+  end
 
   scenario 'successfully' do
     click_link 'Delete Ticket'
