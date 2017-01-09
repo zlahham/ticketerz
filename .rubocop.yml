@@ -1,5 +1,7 @@
 Style/Documentation:
   Enabled: false
+Style/ClassAndModuleChildren:
+  Enabled: false
 Metrics/AbcSize:
   Enabled: false
 Metrics/ClassLength:
@@ -12,3 +14,6 @@ AllCops:
     - 'db/schema.rb'
     - 'db/migrate/*'
     - 'bin/*'
+    - 'config/**/*.rb'
+    - 'Guardfile'
+    - 'spec/spec_helper.rb'
