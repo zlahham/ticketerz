@@ -3,7 +3,10 @@
 <header>
   <h1><%= @project.name %></h1>
   <ul class="actions">
-    <li><%= link_to "Edit Project", edit_project_path(@project), class: "edit" %></li>
+    <% if policy(@project).update? %>
+      <li><%= link_to "Edit Project", edit_project_path(@project), class: "edit" %></li>
+    <% end %>
+
     <% admins_only do %>
       <li><%= link_to "Delete Project", admin_project_path(@project), class: "delete", method: :delete, data: { confirm: "Are you sure you want to delete this project?"} %></li>
     <% end %>
@@ -20,10 +23,10 @@
 
 <ul id="tickets">
   <% @project.tickets.each do |tick|%>
-  <li>
-    <%= tick.id %>
-    <%= link_to tick.name, [@project, tick] %>
-  </li>
+    <li>
+      <%= tick.id %>
+      <%= link_to tick.name, [@project, tick] %>
+    </li>
   <% end %>
 </ul>
 
