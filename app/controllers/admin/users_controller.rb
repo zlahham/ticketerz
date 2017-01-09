@@ -1,12 +1,11 @@
 class Admin::UsersController < Admin::ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:show, :edit, :update, :archive]
 
   def index
-    @users = User.order(:email)
+    @users = User.excluding_archived.order(:email)
   end
 
-  def show
-  end
+  def show; end
 
   def new
     @user = User.new
@@ -36,6 +35,12 @@ class Admin::UsersController < Admin::ApplicationController
       flash.now[:alert] = 'User has not been updated.'
       render 'new'
     end
+  end
+
+  def archive
+    @user.archive
+    flash[:notice] = 'User has been archived.'
+    redirect_to admin_users_path
   end
 
   private
