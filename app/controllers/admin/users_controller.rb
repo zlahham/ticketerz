@@ -24,13 +24,10 @@ class Admin::UsersController < Admin::ApplicationController
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
-    if params[:user][:password].blank?
-      params[:user].delete(:password)
-    end
+    params[:user].delete(:password) if params[:user][:password].blank?
 
     if @user.update(user_params)
       flash[:notice] = 'User has been updated.'
