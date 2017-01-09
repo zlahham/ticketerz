@@ -31,4 +31,4 @@ Gemfile.lock
 .rvmrc
 .byebug_history
 
-db/schema.rb
+/db/schema.rb
