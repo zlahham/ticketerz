@@ -30,3 +30,5 @@ config/secrets.yml
 Gemfile.lock
 .rvmrc
 .byebug_history
+
+db/schema.rb
