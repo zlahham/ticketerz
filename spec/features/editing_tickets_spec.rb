@@ -6,7 +6,7 @@ feature 'Users can edit tickets' do
   let(:ticket)  { create(:ticket, project: project, author: author) }
 
   before do
-    assign_role!(author, :viewer, project)
+    assign_role!(author, :editor, project)
     login_as(author)
     visit project_ticket_path(project, ticket)
     click_link 'Edit Ticket'

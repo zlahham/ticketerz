@@ -2,8 +2,9 @@ require 'rails_helper'
 
 feature 'Users can only see the apropriate links' do
   let(:project) { create(:project) }
-  let(:user) { create(:user) }
-  let(:admin) { create(:user, :admin) }
+  let(:user)    { create(:user) }
+  let(:admin)   { create(:user, :admin) }
+  let(:ticket)  { create(:ticket, project: project, author: user) }
 
   context 'anonymous users' do
     scenario 'cannot see the New Project link' do
@@ -37,6 +38,11 @@ feature 'Users can only see the apropriate links' do
       visit project_path(project)
       expect(page).not_to have_link 'New Ticket'
     end
+
+    scenario 'cannot see the Edit Ticket link' do
+      visit project_ticket_path(project, ticket)
+      expect(page).not_to have_link 'Edit Ticket'
+    end
   end
 
   context 'admin users' do
@@ -60,6 +66,11 @@ feature 'Users can only see the apropriate links' do
     scenario 'can see the New Ticket link' do
       visit project_path(project)
       expect(page).to have_link 'New Ticket'
+    end
+
+    scenario 'can see the Edit Ticket link' do
+      visit project_ticket_path(project, ticket)
+      expect(page).to have_link 'Edit Ticket'
     end
   end
 end
