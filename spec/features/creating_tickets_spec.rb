@@ -6,7 +6,7 @@ feature 'Users can create a new ticket' do
 
   before do
     login_as(user)
-    assign_role!(user, :viewer, project)
+    assign_role!(user, :editor, project)
     visit project_path(project)
     click_link 'New Ticket'
   end
